@@ -49,3 +49,49 @@
 
 
 --	clk_generation
+    clk_generation : process 
+    begin 
+        clk <= '1'
+        wait for clk_PERIOD / 2; 
+        clk <= '0' 
+        wait for clk_PERIOD / 2; 
+     end process clk_generation;
+      
+      --Feeding Inputs
+     feeding_instr : process is 
+        variable v_lline1 : line;
+        variable v_lline2 : line; 
+        variable v_Oline  : line; 
+        variable v_x_in   : in std_logic_vector(?? downto 0);
+        variable v_y_in   : in std_logic_vector(?? downto 0);
+    begin
+      --rest the circuit
+      N_in <= "1111101000";  --N = 1000
+      rst <= '1';
+      wait until rising_edge(clk);
+      wait until rising_edge(clk);
+      rst <= '0';
+
+      file_open(file_VECTORS_X, "lab1-x-fixed-point.txt", read-mode);
+      file_open(file_VECTORS_Y, "lab1-y-fixed-point.txt", read-mode);
+      file_open(file_RESULTS, "lab1-out.txt", write-mode);
+
+      while not endfile (file_VECTORS_X) loop
+         readline(file_VECTORS_X, v_lline1);
+         read(v_lline1, v_x_in);
+         readline(file_VECTORS_Y, v_lline2);
+         read(v_lline2, v_y_in);
+      
+         x_in <= v_x_in;
+         y_in <= v_y_in;
+    
+         wait until rising_edgeclk);
+       end loop;
+
+       if ready_out = '1' then
+         write(v_Oline, mac_out);
+         writeline(file_RESULTS, v_Oline);
+         wait;
+      end if;
+    end process;
+
