@@ -61,9 +61,9 @@ class fixedBinary {
 		int w = leftBitsNeeded + rightBitsNeeded;*/
 				
 		// System.out.println("W = " + w + " and F = " + rightBitsNeeded);
-		int w = 7, f = 3;			// CHANGE THESE DEPENDING ON WHICH VALUES OF W AND F ARE REQUIRED
-		BufferedReader bf = new BufferedReader(new FileReader("lab2-x.txt"));	// CHANGE THIS FILENAME TO THE FILE YOU ARE READING FROM
-		BufferedWriter bw = new BufferedWriter(new FileWriter("lab2-x-converted.txt"));	// CHANGE THIS FILENAME TO THE FILE YOU WANT TO WRITE TO
+		int w = 16, f = 15;			// CHANGE THESE DEPENDING ON WHICH VALUES OF W AND F ARE REQUIRED
+		BufferedReader bf = new BufferedReader(new FileReader("lab3-in.txt"));	// CHANGE THIS FILENAME TO THE FILE YOU ARE READING FROM
+		BufferedWriter bw = new BufferedWriter(new FileWriter("lab3-in-converted.txt"));	// CHANGE THIS FILENAME TO THE FILE YOU WANT TO WRITE TO
 		
 		System.out.println("W = " + w + " and F = " + f);
 		
@@ -128,7 +128,7 @@ class fixedBinary {
 				
 				// CHOOSE ONE OF THESE TO PRINT TO THE OUTPUT STREAM OR A FILE, WHICHEVER IS PREFERRED
 				// System.out.println(output);
-				bw.append(output + " ");
+				bw.append(output + "\n");
 				
 				// reset the input string
 				current = "";
