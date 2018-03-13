@@ -61,13 +61,16 @@ class fixedBinary {
 		int w = leftBitsNeeded + rightBitsNeeded;*/
 				
 		// System.out.println("W = " + w + " and F = " + rightBitsNeeded);
-		System.out.println("W = 7 and F = 3");
+		int w = 7, f = 3;			// CHANGE THESE DEPENDING ON WHICH VALUES OF W AND F ARE REQUIRED
+		BufferedReader bf = new BufferedReader(new FileReader("lab2-x.txt"));	// CHANGE THIS FILENAME TO THE FILE YOU ARE READING FROM
+		BufferedWriter bw = new BufferedWriter(new FileWriter("lab2-x-converted.txt"));	// CHANGE THIS FILENAME TO THE FILE YOU WANT TO WRITE TO
 		
-		int w = 7, f = 3;
-		BufferedReader bf = new BufferedReader(new FileReader("lab2-x.txt"));
+		System.out.println("W = " + w + " and F = " + f);
+		
 		int c = 0;
 		String current = "";
 		while ((c = bf.read()) != -1) {
+			// if we find a space, perform the conversion to a number
 			if (c == 32) {
 				double number = Double.parseDouble(current);
 				
@@ -90,7 +93,7 @@ class fixedBinary {
 					
 					// add 1
 					if (done.charAt(done.length()-1) == '0') {
-						done = done.substring(0, done.length()) + "1";
+						done = done.substring(0, done.length()-1) + "1";
 					} else {
 						int i = done.length() - 1;
 						
@@ -101,6 +104,7 @@ class fixedBinary {
 								break;
 							}
 						}
+						done = done.substring(0, i) + "1" + done.substring(i+1, done.length());
 					}
 				} else {
 					done = "0"  + done;
@@ -109,7 +113,7 @@ class fixedBinary {
 				if (done.length() < w) {
 					// add bits to left
 					while(done.length() < w) {
-						if (number > 0) {
+						if (number >= 0) {
 							done = "0" + done;
 						} else {
 							done = "1" + done;
@@ -119,12 +123,21 @@ class fixedBinary {
 					// truncate
 					done = done.substring(0, w-1);
 				}
+				// place the decimal
 				String output = done.substring(0, w-f) + "." + done.substring(w-f, w);
-				System.out.println(output);
+				
+				// CHOOSE ONE OF THESE TO PRINT TO THE OUTPUT STREAM OR A FILE, WHICHEVER IS PREFERRED
+				// System.out.println(output);
+				bw.append(output + " ");
+				
+				// reset the input string
 				current = "";
 			} else {
+				// we're in the middle of a number, keep getting new characters from the file
 				current += (char)c;
 			}
 		}
+		bf.close();
+		bw.close();
 	}
 }
