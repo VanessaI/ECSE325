@@ -2,7 +2,6 @@ library ieee;
 use ieee.std_logic_1164.all;
 use IEEE.NUMERIC_STD.ALL;
 use STD.textio.ALL;
-use ieee.std_logic_textio.ALL;
 
 
 entity g04_FIR_tb is
@@ -47,7 +46,7 @@ architecture test of g04_FIR_tb is
 	begin
 
 	-- instantiate FIR
-		g04_FIR_INST : g04_FIR
+		g04_FIR_INST : g04_FIR_tb
 		port map (x 	=> x_in,
 					 coef => coef_in,
 					 clk 	=> clk_in,
@@ -76,16 +75,16 @@ architecture test of g04_FIR_tb is
 				  variable v_coef_in   : std_logic_vector(15 downto 0);
 			 
 			 begin
-				--resEt the circuit
+				--rest the circuit
 				--N_in <= "1111101000";  --N = 1000
 				rst_in <= '1';
 				wait until rising_edge(clk);
 				wait until rising_edge(clk);
 				rst_in <= '0';
 		
-				file_open(file_IN, "lab3-in-converted.txt", read_mode);
-				file_open(file_COEF, "lab3-coef-converted.txt", read_mode);
-				file_open(file_RESULTS, "lab3-output.txt", write_mode);
+				file_open(file_IN, "lab3-in-converted.txt", read-mode);
+				file_open(file_COEF, "lab3-coef-converted.txt", read-mode);
+				file_open(file_RESULTS, "lab3-output.txt", write-mode);
 		
 				while not endfile (file_COEF) loop
 					-- read all the coefficients from the file
