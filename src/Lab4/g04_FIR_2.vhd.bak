@@ -1,6 +1,7 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use IEEE.NUMERIC_STD.ALL;
+use std.textio.all;		-- TODO remove if unnecessary
 
 entity g04_FIR is
 port ( 	
