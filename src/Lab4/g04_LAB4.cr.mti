@@ -1,0 +1,20 @@
+{C:/ecse 325 LABS/src/Lab4/testbench.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/ecse 325 LABS/src/Lab4/testbench.vhd}
+Model Technology ModelSim ALTERA vcom 10.4b Compiler 2015.05 May 27 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Compiling entity g04_FIR_2_tb
+-- Compiling architecture test of g04_FIR_2_tb
+
+} {} {}} {C:/ecse 325 LABS/src/Lab4/g04_FIR_2.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/ecse 325 LABS/src/Lab4/g04_FIR_2.vhd}
+Model Technology ModelSim ALTERA vcom 10.4b Compiler 2015.05 May 27 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity g04_FIR_2
+-- Compiling architecture fir_implementation of g04_FIR_2
+
+} {} {}}

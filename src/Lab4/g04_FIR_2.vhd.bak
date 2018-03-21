@@ -1,51 +1,63 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use IEEE.NUMERIC_STD.ALL;
-use std.textio.all;		-- TODO remove if unnecessary
 
-entity g04_FIR is
+entity g04_FIR_2 is
 port ( 	
-		x			: in std_logic_vector(15 downto 0); --input signal
-		coef			: in std_logic_vector(15 downto 0); --input of coefficients		
+		x			   : in std_logic_vector(15 downto 0); --input signal
+		-- coef			: in std_logic_vector(15 downto 0); --input of coefficients		
 		clk			: in std_logic;  -- clock
 		rst			: in std_logic;  -- asynchronous active-high reset
-		y 			: out std_logic_vector(16 downto 0));  -- output signal
-end g04_FIR;
+		y 			   : out std_logic_vector(16 downto 0));  -- output signal
+end g04_FIR_2;
 
-architecture fir_implementation of g04_FIR is
-	type ARRAY25 is array(24 downto 0) of std_logic_vector(15 downto 0);		-- define an array type
-	signal COEFF_ARRAY : ARRAY25;							-- create array to hold coefficients
-	signal INPUT_ARRAY : ARRAY25;							-- create array to hold input values	
-	signal i 	: integer := 0;							-- create counting variable, initialize at 0
-	signal total : std_logic_vector(32 downto 0);					-- create temporary variable to hold the interim total
+architecture fir_implementation of g04_FIR_2 is
+	type ARRAY32 is array(24 downto 0) of signed(31 downto 0);
+	type ARRAY16 is array(24 downto 0) of signed(15 downto 0);		-- define an array type
+	signal COEFF_ARRAY : ARRAY16;						-- create array to hold coefficients
+	signal INPUT_ARRAY : ARRAY32;						-- create array to hold input values	
 	
 	begin
-		counter : process(rst, clk)
-			begin
-			
-			if (rising_edge(clk) and i < 25) then
-				COEFF_ARRAY(i) <= coef;
-				INPUT_ARRAY(25-i) <= x;
-			end if;
-			
-			if(rising_edge(clk) and i >= 25) then
-				if rst = '1' then
-					-- what to do
+		COEFF_ARRAY(0) <= "0000001001110010";
+		COEFF_ARRAY(1) <= "0000000000010001";
+		COEFF_ARRAY(2) <= "1111111111010011";
+		COEFF_ARRAY(3) <= "1111111011011110";
+		COEFF_ARRAY(4) <= "0000001100011001";
+		COEFF_ARRAY(5) <= "1111110110100111";
+		COEFF_ARRAY(6) <= "1111110000001110";
+		COEFF_ARRAY(7) <= "0000110110111100";
+		COEFF_ARRAY(8) <= "1110110001110011";
+		COEFF_ARRAY(9) <= "0000110111110111";
+		COEFF_ARRAY(10) <= "0000001100000111";
+		COEFF_ARRAY(11) <= "1110101000001010";
+		COEFF_ARRAY(12) <= "0001111000110011";
+		COEFF_ARRAY(13) <= "1110101000001010";
+		COEFF_ARRAY(14) <= "0000001100000111";
+		COEFF_ARRAY(15) <= "0000110111110111";
+		COEFF_ARRAY(16) <= "1110110001110011";
+		COEFF_ARRAY(17) <= "0000110110111100";
+		COEFF_ARRAY(18) <= "1111110000001110";
+		COEFF_ARRAY(19) <= "1111110110100111";
+		COEFF_ARRAY(20) <= "0000001100011001";
+		COEFF_ARRAY(21) <= "1111111011011110";
+		COEFF_ARRAY(22) <= "1111111111010011";
+		COEFF_ARRAY(23) <= "0000000000010001";
+		COEFF_ARRAY(24) <= "0000001001110010";
+		
+		multiply : process(rst, clk)
+		begin
+			if rst = '1' then
+				-- reset array values to 0
+				INPUT_ARRAY <= (others=>(others=>'0'));
+			elsif(rising_edge(clk)) then
+				-- step 1: calculate a(0) by multiplying input value by b_(N-1)
+				INPUT_ARRAY(0) <= signed(x)*COEFF_ARRAY(0);
 					
-				else 
-					-- multiply all 25 input values by all 25 coefficients, then output that to y
-					total <= "000000000000000000000000000000000";
-					for t in 0 to 24 loop
-						total <= std_logic_vector(signed(total) + (signed(INPUT_ARRAY(t)) * signed(COEFF_ARRAY(t))));
-					end loop;
-					
-					-- shuffle input values along the array
-					for t in 1 to 24 loop
-						INPUT_ARRAY(t-i) <= INPUT_ARRAY(t-i-1);
-					end loop;
-					INPUT_ARRAY(0) <= x;
-				end if;
+				for t in 1 to 24 loop
+					-- step 2: in a for loop, calculate a(1) to a(24) with (x*b_(N-i)+a(i-1))
+					INPUT_ARRAY(t) <= (signed(x)*COEFF_ARRAY(t))+INPUT_ARRAY(t-1);
+				end loop;
 			end if;
-		end process; 
-	y <= total(16 downto 0);		-- assign result to output outside of the process block, truncating unused digits
+		end process multiply;
+	y <= std_logic_vector(INPUT_ARRAY(24)(31 downto 15));		-- assign result to output outside of the process block, truncating unused digits
 end fir_implementation;
