@@ -19,7 +19,7 @@ architecture fir_implementation of g04_FIR is
 
 	begin
 		-- fill input array with initial values of 0
-		INPUT_ARRAY <= (others=>(others=>'0'));
+		--INPUT_ARRAY <= (others=>(others=>'0'));
 
 		COEFF_ARRAY(0) <= "0000001001110010";
 		COEFF_ARRAY(1) <= "0000000000010001";
