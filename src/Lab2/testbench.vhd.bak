@@ -65,15 +65,15 @@ begin
     variable v_lline1 : line;
     variable v_lline2 : line; 
     variable v_Oline  : line; 
-    variable v_x_in   : std_logic_vector(7 downto 0);
-    variable v_y_in   : std_logic_vector(8 downto 0);
+    variable v_x_in   : in std_logic_vector(7 downto 0);
+    variable v_y_in   : in std_logic_vector(8 downto 0);
   begin
       --reset the circuit
       N_in <= "1111101000";  --N = 1000
-      rst_in <= '1';
+      rst <= '1';
       wait until rising_edge(clk_in);
       wait until rising_edge(clk_in);
-      rst_in <= '0';
+      rst <= '0';
 
       file_open(file_VECTORS_X, "lab1-x-fixed-point.txt", read_mode);
       file_open(file_VECTORS_Y, "lab1-y-fixed-point.txt", read_mode);

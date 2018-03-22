@@ -24,16 +24,16 @@ architecture test of g04_FIR_2_tb is
 
 	-- Testbench internal signals
 	file file_IN 		: text;
-	--file file_COEF		: text;
-	file file_RESULTS : text;
+	--file file_COEF	: text;
+	file file_RESULTS 	: text;
 	
 	constant clk_PERIOD : time := 100 ns;
 	
-	signal x_in		: std_logic_vector(15 downto 0);
+	signal x_in			: std_logic_vector(15 downto 0);
 	--signal coef_in	: std_logic_vector(15 downto 0);
-	signal clk_in	: std_logic;
-	signal rst_in	: std_logic;
-	signal y_out	: std_logic_vector(16 downto 0);
+	signal clk_in		: std_logic;
+	signal rst_in		: std_logic;
+	signal y_out		: std_logic_vector(16 downto 0);
 
 
 begin

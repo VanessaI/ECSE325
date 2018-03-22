@@ -60,7 +60,7 @@ architecture fir_implementation of g04_FIR is
 				for i in 1 to 24 loop
 					INPUT_ARRAY(25 - i) <= INPUT_ARRAY(25 - (i+1)); 
 				end loop;
-				INPUT_ARRAY(0) <= signed(x);
+				INPUT_ARRAY(0) <= x;
 
 				-- calculate output value
 				for i in 1 to 24 loop
@@ -68,5 +68,5 @@ architecture fir_implementation of g04_FIR is
 				end loop;
 			end if;
 		end process filter;
-	y <= std_logic_vector(TEMP_TOTAL(31 downto 15));		-- assign result to output outside of the process block, truncating unused digits
+	y <= std_logic_vector(TEMP_TOTAL(24)(31 downto 15));		-- assign result to output outside of the process block, truncating unused digits
 end fir_implementation;

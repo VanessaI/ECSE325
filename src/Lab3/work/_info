@@ -1,0 +1,94 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/altera_lite/16.0
+Eg04_fir
+Z0 w1521723412
+Z1 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z4 dC:/Users/Alex/Documents/McGill/ECSE 325/Lab Assignments/src/Lab3
+Z5 8C:/Users/Alex/Documents/McGill/ECSE 325/Lab Assignments/src/Lab3/g04_FIR.vhd
+Z6 FC:/Users/Alex/Documents/McGill/ECSE 325/Lab Assignments/src/Lab3/g04_FIR.vhd
+l0
+L5
+VUJLnWlCZK:h_GB<0D^GVY3
+!s100 IHf[;QbU`a_PZ4?mT>V[K0
+Z7 OV;C;10.4d;61
+32
+Z8 !s110 1521723417
+!i10b 1
+Z9 !s108 1521723417.000000
+Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Alex/Documents/McGill/ECSE 325/Lab Assignments/src/Lab3/g04_FIR.vhd|
+Z11 !s107 C:/Users/Alex/Documents/McGill/ECSE 325/Lab Assignments/src/Lab3/g04_FIR.vhd|
+!i113 1
+Z12 o-work work -2002 -explicit
+Z13 tExplicit 1
+Afir_implementation
+R1
+R2
+R3
+DEx4 work 7 g04_fir 0 22 UJLnWlCZK:h_GB<0D^GVY3
+l20
+L13
+Vf<2HKdPRTLASZ:>?AEHR_3
+!s100 Jf>c030T<JjIGFBJO[Y]a2
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Eg04_fir_tb
+Z14 w1521722045
+Z15 DPx4 ieee 16 std_logic_textio 0 22 V5TSK`;aJKC<l]CEg1>mz1
+R1
+R2
+R3
+R4
+Z16 8C:/Users/Alex/Documents/McGill/ECSE 325/Lab Assignments/src/Lab3/testbench.vhd
+Z17 FC:/Users/Alex/Documents/McGill/ECSE 325/Lab Assignments/src/Lab3/testbench.vhd
+l0
+L8
+V5EObb?MK2I[R]o?PDF99>3
+!s100 eFA=k@NmU0T2L2Gf8^i=_2
+R7
+32
+R8
+!i10b 1
+R9
+Z18 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Alex/Documents/McGill/ECSE 325/Lab Assignments/src/Lab3/testbench.vhd|
+Z19 !s107 C:/Users/Alex/Documents/McGill/ECSE 325/Lab Assignments/src/Lab3/testbench.vhd|
+!i113 1
+R12
+R13
+Atest
+R15
+R1
+R2
+R3
+DEx4 work 10 g04_fir_tb 0 22 5EObb?MK2I[R]o?PDF99>3
+l39
+L11
+V6jlaMJFC1`jDm`THPXA^b2
+!s100 ^kIiaDhIE^aXAi50NeISC0
+R7
+32
+R8
+!i10b 1
+R9
+R18
+R19
+!i113 1
+R12
+R13

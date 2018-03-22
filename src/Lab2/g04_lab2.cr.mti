@@ -1,0 +1,11 @@
+{C:/Users/Alex/Documents/McGill/ECSE 325/Lab Assignments/src/Lab2/testbench.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:\Users\Alex\Documents\McGill\ECSE 325\Lab Assignments\src\Lab2\testbench.vhd}
+Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Compiling entity g04_MAC_tb
+-- Compiling architecture test of g04_MAC_tb
+
+} {} {}}
