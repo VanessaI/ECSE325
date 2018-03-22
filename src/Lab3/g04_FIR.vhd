@@ -68,5 +68,6 @@ architecture fir_implementation of g04_FIR is
 				end loop;
 			end if;
 		end process filter;
-	y <= std_logic_vector(TEMP_TOTAL(31 downto 15));		-- assign result to output outside of the process block, truncating unused digits
+	-- assign result to output outside of the process block, truncating unused digits
+	y <= std_logic_vector(TEMP_TOTAL(31 downto 15));
 end fir_implementation;
