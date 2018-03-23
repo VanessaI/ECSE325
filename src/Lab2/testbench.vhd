@@ -75,9 +75,9 @@ begin
       wait until rising_edge(clk_in);
       rst_in <= '0';
 
-      file_open(file_VECTORS_X, "lab1-x-fixed-point.txt", read_mode);
-      file_open(file_VECTORS_Y, "lab1-y-fixed-point.txt", read_mode);
-      file_open(file_RESULTS, "lab1-out.txt", write_mode);
+      file_open(file_VECTORS_X, "C:\Users\Alex\Documents\McGill\ECSE 325\Lab Assignments\src\Lab2\lab1-x-fixed-point.txt", read_mode);
+      file_open(file_VECTORS_Y, "C:\Users\Alex\Documents\McGill\ECSE 325\Lab Assignments\src\Lab2\lab1-y-fixed-point.txt", read_mode);
+      file_open(file_RESULTS, "C:\Users\Alex\Documents\McGill\ECSE 325\Lab Assignments\src\Lab2\lab1-out.txt", write_mode);
 
       while not endfile (file_VECTORS_X) loop
          readline(file_VECTORS_X, v_lline1);
@@ -91,10 +91,11 @@ begin
          wait until rising_edge(clk_in);
       end loop;
 
-      if ready_in= '1' then
-         write(v_Oline, mac_out);
-         writeline(file_RESULTS, v_Oline);
-         wait;
-      end if;
+      --if ready_in = '1' then
+        -- write(v_Oline, mac_out);
+        -- writeline(file_RESULTS, v_Oline);
+      --end if;
+
+      wait;
   end process;
 end test;

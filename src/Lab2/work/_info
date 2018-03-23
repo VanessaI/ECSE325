@@ -9,7 +9,7 @@ z2
 cModel Technology
 dC:/altera_lite/16.0
 Eg04_lab2
-Z0 w1521690996
+Z0 w1521814086
 Z1 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
 Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
@@ -22,9 +22,9 @@ VCl1MjlIfR?4W=ee?cK_Km1
 !s100 oQzifU2@kAVcJGolEZ3<_2
 Z7 OV;C;10.4d;61
 32
-Z8 !s110 1521691277
+Z8 !s110 1521817029
 !i10b 1
-Z9 !s108 1521691277.000000
+Z9 !s108 1521817029.000000
 Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Alex/Documents/McGill/ECSE 325/Lab Assignments/src/Lab2/g04_lab2.vhd|
 Z11 !s107 C:/Users/Alex/Documents/McGill/ECSE 325/Lab Assignments/src/Lab2/g04_lab2.vhd|
 !i113 1
@@ -37,8 +37,8 @@ R3
 Z14 DEx4 work 8 g04_lab2 0 22 Cl1MjlIfR?4W=ee?cK_Km1
 l18
 L16
-VgHLm86?PfcIQXUS]DR=?n3
-!s100 9a_AF4H1QHa9Ih^lCC6@f2
+Z15 VE081]DJ`oEVf83]WELEN60
+Z16 !s100 L:FFnZP:VgZzK7SaI2^;61
 R7
 32
 R8
@@ -50,14 +50,14 @@ R11
 R12
 R13
 Eg04_mac_tb
-Z15 w1521690372
-Z16 DPx4 ieee 16 std_logic_textio 0 22 V5TSK`;aJKC<l]CEg1>mz1
+Z17 w1521817011
+Z18 DPx4 ieee 16 std_logic_textio 0 22 V5TSK`;aJKC<l]CEg1>mz1
 R1
 R2
 R3
 R4
-Z17 8C:\Users\Alex\Documents\McGill\ECSE 325\Lab Assignments\src\Lab2\testbench.vhd
-Z18 FC:\Users\Alex\Documents\McGill\ECSE 325\Lab Assignments\src\Lab2\testbench.vhd
+Z19 8C:\Users\Alex\Documents\McGill\ECSE 325\Lab Assignments\src\Lab2\testbench.vhd
+Z20 FC:\Users\Alex\Documents\McGill\ECSE 325\Lab Assignments\src\Lab2\testbench.vhd
 l0
 L7
 V`92I664f?XiWU?Bk81N1W3
@@ -67,28 +67,28 @@ R7
 R8
 !i10b 1
 R9
-Z19 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:\Users\Alex\Documents\McGill\ECSE 325\Lab Assignments\src\Lab2\testbench.vhd|
-Z20 !s107 C:\Users\Alex\Documents\McGill\ECSE 325\Lab Assignments\src\Lab2\testbench.vhd|
+Z21 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:\Users\Alex\Documents\McGill\ECSE 325\Lab Assignments\src\Lab2\testbench.vhd|
+Z22 !s107 C:\Users\Alex\Documents\McGill\ECSE 325\Lab Assignments\src\Lab2\testbench.vhd|
 !i113 1
 R12
 R13
 Atest
-R16
+R18
 R1
 R2
 R3
 DEx4 work 10 g04_mac_tb 0 22 `92I664f?XiWU?Bk81N1W3
 l40
 L10
-VSI_WhOK5Winm9ShcO?jI42
-!s100 DJ32nBgP=b>HdmMnA5Mf<1
+Vcc4_ZkFOj5]Hf?c1jBF;_3
+!s100 lPX3_;kzRb=i5LV7NS5NJ3
 R7
 32
 R8
 !i10b 1
 R9
-R19
-R20
+R21
+R22
 !i113 1
 R12
 R13

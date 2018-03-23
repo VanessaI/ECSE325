@@ -18,12 +18,11 @@ architecture mac_Implementation of g04_lab2 is
 	begin
 	counter : process(rst, clk)
 		begin
-		ready <= '0';
 		if rst = '1' then
+			-- do nothing
+		elsif rising_edge(clk) then
 			temp <= (others => '0');
-		elsif rising_edge(clk) then				
-				ready <= '0';
-				temp <= (others => '0');
+			ready <= '0';		
 				for i in 1 to 1000 loop				-- N = 1000
 					temp <= temp + signed(x) * signed(y);
 				end loop;

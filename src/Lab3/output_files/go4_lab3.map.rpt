@@ -1,5 +1,5 @@
-Analysis & Elaboration report for go4_lab3
-Thu Mar 22 08:59:14 2018
+Analysis & Synthesis report for go4_lab3
+Fri Mar 23 11:05:22 2018
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -7,10 +7,17 @@ Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Analysis & Elaboration Summary
-  3. Parallel Compilation
-  4. Analysis & Elaboration Settings
-  5. Analysis & Elaboration Messages
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis DSP Block Usage Summary
+  9. General Register Statistics
+ 10. Post-Synthesis Netlist Statistics for Top Partition
+ 11. Elapsed Time Per Partition
+ 12. Analysis & Synthesis Messages
 
 
 
@@ -34,42 +41,31 @@ agreement for further details.
 
 
 
-+-----------------------------------------------------------------------------+
-; Analysis & Elaboration Summary                                              ;
-+-------------------------------+---------------------------------------------+
-; Analysis & Elaboration Status ; Failed - Thu Mar 22 08:59:14 2018           ;
-; Quartus Prime Version         ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
-; Revision Name                 ; go4_lab3                                    ;
-; Top-level Entity Name         ; g04_FIR                                     ;
-; Family                        ; Cyclone V                                   ;
-; Logic utilization (in ALMs)   ; N/A until Partition Merge                   ;
-; Total registers               ; N/A until Partition Merge                   ;
-; Total pins                    ; N/A until Partition Merge                   ;
-; Total virtual pins            ; N/A until Partition Merge                   ;
-; Total block memory bits       ; N/A until Partition Merge                   ;
-; Total PLLs                    ; N/A until Partition Merge                   ;
-; Total DLLs                    ; N/A until Partition Merge                   ;
-+-------------------------------+---------------------------------------------+
-
-
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 4           ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-+----------------------------+-------------+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Fri Mar 23 11:05:22 2018       ;
+; Quartus Prime Version           ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
+; Revision Name                   ; go4_lab3                                    ;
+; Top-level Entity Name           ; g04_FIR                                     ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 64                                          ;
+; Total pins                      ; 35                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 1                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Elaboration Settings                                                                                           ;
+; Analysis & Synthesis Settings                                                                                             ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
@@ -156,14 +152,132 @@ agreement for further details.
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 
 
-+---------------------------------+
-; Analysis & Elaboration Messages ;
-+---------------------------------+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                        ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                 ; Library ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------+---------+
+; g04_FIR.vhd                      ; yes             ; User VHDL File  ; C:/Users/Alex/Documents/McGill/ECSE 325/Lab Assignments/src/Lab3/g04_FIR.vhd ;         ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimate of Logic utilization (ALMs needed) ; 32        ;
+;                                             ;           ;
+; Combinational ALUT usage for logic          ; 32        ;
+;     -- 7 input functions                    ; 0         ;
+;     -- 6 input functions                    ; 0         ;
+;     -- 5 input functions                    ; 0         ;
+;     -- 4 input functions                    ; 0         ;
+;     -- <=3 input functions                  ; 32        ;
+;                                             ;           ;
+; Dedicated logic registers                   ; 64        ;
+;                                             ;           ;
+; I/O pins                                    ; 35        ;
+;                                             ;           ;
+; Total DSP Blocks                            ; 1         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 64        ;
+; Total fan-out                               ; 355       ;
+; Average fan-out                             ; 2.13      ;
++---------------------------------------------+-----------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                     ;
++----------------------------+-------------------+--------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+-------------------+--------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+; |g04_FIR                   ; 32 (32)           ; 64 (64)      ; 0                 ; 1          ; 35   ; 0            ; |g04_FIR            ; g04_FIR     ; work         ;
++----------------------------+-------------------+--------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------+
+; Analysis & Synthesis DSP Block Usage Summary    ;
++-----------------------------------+-------------+
+; Statistic                         ; Number Used ;
++-----------------------------------+-------------+
+; Two Independent 18x18             ; 1           ;
+; Total number of DSP blocks        ; 1           ;
+;                                   ;             ;
+; Fixed Point Mixed Sign Multiplier ; 1           ;
++-----------------------------------+-------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 64    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 32    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 32    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 64                          ;
+;     CLR               ; 32                          ;
+;     ENA               ; 32                          ;
+; arriav_lcell_comb     ; 32                          ;
+;     arith             ; 32                          ;
+;         2 data inputs ; 32                          ;
+; arriav_mac            ; 1                           ;
+; boundary_port         ; 35                          ;
+;                       ;                             ;
+; Max LUT depth         ; 4.10                        ;
+; Average LUT depth     ; 2.11                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:02     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime Analysis & Elaboration
+Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
-    Info: Processing started: Thu Mar 22 08:58:39 2018
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off go4_lab3 -c go4_lab3 --analysis_and_elaboration
+    Info: Processing started: Fri Mar 23 11:04:42 2018
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off go4_lab3 -c go4_lab3
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file testbench.vhd
@@ -173,30 +287,18 @@ Info (12021): Found 2 design units, including 1 entities, in source file g04_fir
     Info (12022): Found design unit 1: g04_FIR-fir_implementation File: C:/Users/Alex/Documents/McGill/ECSE 325/Lab Assignments/src/Lab3/g04_FIR.vhd Line: 13
     Info (12023): Found entity 1: g04_FIR File: C:/Users/Alex/Documents/McGill/ECSE 325/Lab Assignments/src/Lab3/g04_FIR.vhd Line: 5
 Info (12127): Elaborating entity "g04_FIR" for the top level hierarchy
-Error (10028): Can't resolve multiple constant drivers for net "INPUT_ARRAY[1][15]" at g04_FIR.vhd(22) File: C:/Users/Alex/Documents/McGill/ECSE 325/Lab Assignments/src/Lab3/g04_FIR.vhd Line: 22
-Error (10029): Constant driver at g04_FIR.vhd(52) File: C:/Users/Alex/Documents/McGill/ECSE 325/Lab Assignments/src/Lab3/g04_FIR.vhd Line: 52
-Error (10028): Can't resolve multiple constant drivers for net "INPUT_ARRAY[1][14]" at g04_FIR.vhd(22) File: C:/Users/Alex/Documents/McGill/ECSE 325/Lab Assignments/src/Lab3/g04_FIR.vhd Line: 22
-Error (10028): Can't resolve multiple constant drivers for net "INPUT_ARRAY[1][13]" at g04_FIR.vhd(22) File: C:/Users/Alex/Documents/McGill/ECSE 325/Lab Assignments/src/Lab3/g04_FIR.vhd Line: 22
-Error (10028): Can't resolve multiple constant drivers for net "INPUT_ARRAY[1][12]" at g04_FIR.vhd(22) File: C:/Users/Alex/Documents/McGill/ECSE 325/Lab Assignments/src/Lab3/g04_FIR.vhd Line: 22
-Error (10028): Can't resolve multiple constant drivers for net "INPUT_ARRAY[1][11]" at g04_FIR.vhd(22) File: C:/Users/Alex/Documents/McGill/ECSE 325/Lab Assignments/src/Lab3/g04_FIR.vhd Line: 22
-Error (10028): Can't resolve multiple constant drivers for net "INPUT_ARRAY[1][10]" at g04_FIR.vhd(22) File: C:/Users/Alex/Documents/McGill/ECSE 325/Lab Assignments/src/Lab3/g04_FIR.vhd Line: 22
-Error (10028): Can't resolve multiple constant drivers for net "INPUT_ARRAY[1][9]" at g04_FIR.vhd(22) File: C:/Users/Alex/Documents/McGill/ECSE 325/Lab Assignments/src/Lab3/g04_FIR.vhd Line: 22
-Error (10028): Can't resolve multiple constant drivers for net "INPUT_ARRAY[1][8]" at g04_FIR.vhd(22) File: C:/Users/Alex/Documents/McGill/ECSE 325/Lab Assignments/src/Lab3/g04_FIR.vhd Line: 22
-Error (10028): Can't resolve multiple constant drivers for net "INPUT_ARRAY[1][7]" at g04_FIR.vhd(22) File: C:/Users/Alex/Documents/McGill/ECSE 325/Lab Assignments/src/Lab3/g04_FIR.vhd Line: 22
-Error (10028): Can't resolve multiple constant drivers for net "INPUT_ARRAY[1][6]" at g04_FIR.vhd(22) File: C:/Users/Alex/Documents/McGill/ECSE 325/Lab Assignments/src/Lab3/g04_FIR.vhd Line: 22
-Error (10028): Can't resolve multiple constant drivers for net "INPUT_ARRAY[1][5]" at g04_FIR.vhd(22) File: C:/Users/Alex/Documents/McGill/ECSE 325/Lab Assignments/src/Lab3/g04_FIR.vhd Line: 22
-Error (10028): Can't resolve multiple constant drivers for net "INPUT_ARRAY[1][4]" at g04_FIR.vhd(22) File: C:/Users/Alex/Documents/McGill/ECSE 325/Lab Assignments/src/Lab3/g04_FIR.vhd Line: 22
-Error (10028): Can't resolve multiple constant drivers for net "INPUT_ARRAY[1][3]" at g04_FIR.vhd(22) File: C:/Users/Alex/Documents/McGill/ECSE 325/Lab Assignments/src/Lab3/g04_FIR.vhd Line: 22
-Error (10028): Can't resolve multiple constant drivers for net "INPUT_ARRAY[1][2]" at g04_FIR.vhd(22) File: C:/Users/Alex/Documents/McGill/ECSE 325/Lab Assignments/src/Lab3/g04_FIR.vhd Line: 22
-Error (10028): Can't resolve multiple constant drivers for net "INPUT_ARRAY[1][1]" at g04_FIR.vhd(22) File: C:/Users/Alex/Documents/McGill/ECSE 325/Lab Assignments/src/Lab3/g04_FIR.vhd Line: 22
-Error (10028): Can't resolve multiple constant drivers for net "INPUT_ARRAY[1][0]" at g04_FIR.vhd(22) File: C:/Users/Alex/Documents/McGill/ECSE 325/Lab Assignments/src/Lab3/g04_FIR.vhd Line: 22
-Error (10028): Can't resolve multiple constant drivers for net "INPUT_ARRAY[0][15]" at g04_FIR.vhd(22) File: C:/Users/Alex/Documents/McGill/ECSE 325/Lab Assignments/src/Lab3/g04_FIR.vhd Line: 22
-Error (10028): Can't resolve multiple constant drivers for net "INPUT_ARRAY[0][14]" at g04_FIR.vhd(22) File: C:/Users/Alex/Documents/McGill/ECSE 325/Lab Assignments/src/Lab3/g04_FIR.vhd Line: 22
-Error (12153): Can't elaborate top-level user hierarchy
-Error: Quartus Prime Analysis & Elaboration was unsuccessful. 20 errors, 1 warning
-    Error: Peak virtual memory: 972 megabytes
-    Error: Processing ended: Thu Mar 22 08:59:14 2018
-    Error: Elapsed time: 00:00:35
-    Error: Total CPU time (on all processors): 00:01:34
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 100 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 18 input pins
+    Info (21059): Implemented 17 output pins
+    Info (21061): Implemented 64 logic cells
+    Info (21062): Implemented 1 DSP elements
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 1008 megabytes
+    Info: Processing ended: Fri Mar 23 11:05:22 2018
+    Info: Elapsed time: 00:00:40
+    Info: Total CPU time (on all processors): 00:01:32
 
 
