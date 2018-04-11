@@ -240,10 +240,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "reset_reset_n",
-					"strict" : false
-				},
-				{
 					"name" : "pushbuttons_export[2]",
 					"strict" : false
 				},

@@ -1,23 +1,8 @@
 
 module qsys_lab (
 	clk_clk,
-	reset_reset_n,
-	memory_mem_a,
-	memory_mem_ba,
-	memory_mem_ck,
-	memory_mem_ck_n,
-	memory_mem_cke,
-	memory_mem_cs_n,
-	memory_mem_ras_n,
-	memory_mem_cas_n,
-	memory_mem_we_n,
-	memory_mem_reset_n,
-	memory_mem_dq,
-	memory_mem_dqs,
-	memory_mem_dqs_n,
-	memory_mem_odt,
-	memory_mem_dm,
-	memory_oct_rzqin,
+	hex3_hex0_export,
+	hex5_hex4_export,
 	hps_io_hps_io_emac1_inst_TX_CLK,
 	hps_io_hps_io_emac1_inst_TXD0,
 	hps_io_hps_io_emac1_inst_TXD1,
@@ -75,30 +60,29 @@ module qsys_lab (
 	hps_io_hps_io_trace_inst_D5,
 	hps_io_hps_io_trace_inst_D6,
 	hps_io_hps_io_trace_inst_D7,
+	memory_mem_a,
+	memory_mem_ba,
+	memory_mem_ck,
+	memory_mem_ck_n,
+	memory_mem_cke,
+	memory_mem_cs_n,
+	memory_mem_ras_n,
+	memory_mem_cas_n,
+	memory_mem_we_n,
+	memory_mem_reset_n,
+	memory_mem_dq,
+	memory_mem_dqs,
+	memory_mem_dqs_n,
+	memory_mem_odt,
+	memory_mem_dm,
+	memory_oct_rzqin,
+	pushbuttons_export,
 	rled_export,
-	switches_export,
-	hex3_hex0_export,
-	hex5_hex4_export,
-	pushbuttons_export);	
+	switches_export);	
 
 	input		clk_clk;
-	input		reset_reset_n;
-	output	[14:0]	memory_mem_a;
-	output	[2:0]	memory_mem_ba;
-	output		memory_mem_ck;
-	output		memory_mem_ck_n;
-	output		memory_mem_cke;
-	output		memory_mem_cs_n;
-	output		memory_mem_ras_n;
-	output		memory_mem_cas_n;
-	output		memory_mem_we_n;
-	output		memory_mem_reset_n;
-	inout	[39:0]	memory_mem_dq;
-	inout	[4:0]	memory_mem_dqs;
-	inout	[4:0]	memory_mem_dqs_n;
-	output		memory_mem_odt;
-	output	[4:0]	memory_mem_dm;
-	input		memory_oct_rzqin;
+	output	[31:0]	hex3_hex0_export;
+	output	[15:0]	hex5_hex4_export;
 	output		hps_io_hps_io_emac1_inst_TX_CLK;
 	output		hps_io_hps_io_emac1_inst_TXD0;
 	output		hps_io_hps_io_emac1_inst_TXD1;
@@ -156,9 +140,23 @@ module qsys_lab (
 	output		hps_io_hps_io_trace_inst_D5;
 	output		hps_io_hps_io_trace_inst_D6;
 	output		hps_io_hps_io_trace_inst_D7;
+	output	[14:0]	memory_mem_a;
+	output	[2:0]	memory_mem_ba;
+	output		memory_mem_ck;
+	output		memory_mem_ck_n;
+	output		memory_mem_cke;
+	output		memory_mem_cs_n;
+	output		memory_mem_ras_n;
+	output		memory_mem_cas_n;
+	output		memory_mem_we_n;
+	output		memory_mem_reset_n;
+	inout	[39:0]	memory_mem_dq;
+	inout	[4:0]	memory_mem_dqs;
+	inout	[4:0]	memory_mem_dqs_n;
+	output		memory_mem_odt;
+	output	[4:0]	memory_mem_dm;
+	input		memory_oct_rzqin;
+	input	[3:0]	pushbuttons_export;
 	output	[9:0]	rled_export;
 	input	[9:0]	switches_export;
-	output	[31:0]	hex3_hex0_export;
-	output	[15:0]	hex5_hex4_export;
-	input	[3:0]	pushbuttons_export;
 endmodule
