@@ -81,38 +81,37 @@ int mins_tens = 0;
 int hours = 0;
 int hours_tens = 0;
 
-while (1)
-{
-if (CheckTimer(&tv,1)==1) {
-	secs++;
-	if (secs == 10) {
-	secs = 0;
-	secs_tens++;
-	if (secs_tens == 6) {
-		secs_tens = 0;
-		mins++;
-		if (mins == 10) {
-			mins = 0;
-			mins_tens++;
-			if (mins_tens == 6) {
-				mins_tens = 0;
-				hours++;
-				if (hours == 10 || ((hours_tens == 1) && (hours == 2))) {
-					hours = 0;
-					hours_tens++;
-					if (hours_tens == 2) {
-						hours_tens = 0;
+	while (1) {
+		if (CheckTimer(&tv,1)==1) {
+			secs++;
+			if (secs == 10) {
+				secs = 0;
+				secs_tens++;
+				if (secs_tens == 6) {
+					secs_tens = 0;
+					mins++;
+					if (mins == 10) {
+						mins = 0;
+						mins_tens++;
+						if (mins_tens == 6) {
+							mins_tens = 0;
+							hours++;
+							if (hours == 10 || ((hours_tens == 1) && (hours == 2))) {
+								hours = 0;
+								hours_tens++;
+								if (hours_tens == 2) {
+									hours_tens = 0;
+								}
+							}
+						}
 					}
 				}
 			}
 		}
+	  
+		switch_value = *(switchptr);
+		*(led) = switch_value;
+		*(hex3_hex0) = pack_hex(hex_to_7segment(mins_tens),hex_to_7segment(mins),hex_to_7segment(secs_tens),hex_to_7segment(secs));
+		*(hex5_hex4) = pack_hex(0,0,hex_to_7segment(hours_tens),hex_to_7segment(hours));
 	}
-}
-}
-  
-switch_value = *(switchptr);
-*(led) = switch_value;
-*(hex3_hex0) = pack_hex(hex_to_7segment(mins_tens),hex_to_7segment(mins),hex_to_7segment(secs_tens),hex_to_7segment(secs));
-*(hex5_hex4) = pack_hex(0,0,hex_to_7segment(hours_tens),hex_to_7segment(hours));
-}
 }
